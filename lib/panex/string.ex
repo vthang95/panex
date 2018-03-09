@@ -73,4 +73,28 @@ defmodule Panex.String do
       [_] -> nil
     end
   end
+
+  @doc """
+  Truncates string if it's longer than the given maximum string length
+
+  ## Examples
+      iex> truncate("asdfasdfasjdfkasdfjkadsfjk", 10)
+      "asdfasdfasj..."
+
+  """
+
+  @spec truncate(String.t, integer()) :: String.t
+  def truncate(string, num), do: String.slice(string, 0..num) <> "..."
+
+  @doc """
+  Same as `truncate/2` but can use custom omission.
+
+  ## Examples
+      iex> truncate("One two three four five six", 12, " and so on")
+      "One two three and so on"
+
+  """
+
+  @spec truncate(String.t, integer(), String.t) :: String.t
+  def truncate(string, num, str) when is_bitstring(str), do: String.slice(string, 0..num) <> str
 end

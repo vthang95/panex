@@ -52,6 +52,8 @@ end
 - [x] camel_key
 - [x] kebab_key
 - [x] substring_index
+- [x] truncate
+- [ ] deburr
 ...
 
 ## Function
